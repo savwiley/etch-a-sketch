@@ -9,4 +9,4 @@ function addSquares(numb = 16) {
         squares.classList.add("square");
         grid.appendChild(squares);
     } return;
-}
+} 

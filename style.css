@@ -7,7 +7,7 @@
 }
 
 .square {
-    background: linear-gradient(120deg, blue, white);
+    background: linear-gradient(120deg, blue, white); 
     width: 60px;
     height: 60px;
 }
