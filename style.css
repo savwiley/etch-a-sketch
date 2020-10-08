@@ -1,16 +1,10 @@
 #grid {
-    display:flex;
-    flex-wrap:wrap;
+    display:grid;
     background: #ebebeb;
     width: 960px;
     height: 960px;
 }
 
-.square {
-    background: linear-gradient(120deg, blue, white); 
-    width: 60px;
-    height: 60px;
-}
-.square:hover{
-    background: linear-gradient(120deg, white, blue);
+#square {
+    background: linear-gradient(120deg, blue, white);
 }
