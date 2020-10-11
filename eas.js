@@ -1,45 +1,73 @@
 //grid
 const grid = document.querySelector("#grid");
 
-/*
-function createGrid() {
-    document.getElementById("squares").submit();
-    let numb = numb;
-    return addSquares();
+//creates a RAINBOW
+function rainbow() {
+    let first = Math.floor(Math.random() * 256);
+    let second = Math.floor(Math.random() * 256);
+    let third = Math.floor(Math.random() * 256);
+    let color = `${first}, ${second}, ${third}`
+    return color;
 }
-*/
 
 //creates squares
-function addSquares(numb = 16) {
-    grid.style.gridTemplateColumns = `repeat (${numb}, 1fr)`;
-    grid.style.gridTemplateRows = `repeat (${numb}, 1fr)`;
+function addSquares(numb) {
     let sum = numb * numb;
+    grid.style.gridTemplateColumns = `repeat(${numb}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${numb}, 1fr)`;
     for (let i = 0; i < sum; i++) {
         const squares = document.createElement("div");
         squares.setAttribute("id", "square");
         squares.addEventListener("mouseover", mouseOver);
         function mouseOver(){
-            squares.style.background = "linear-gradient(120deg, white, blue)";
+            squares.style.background = `linear-gradient(120deg, rgb(${rainbow()}), rgb(${rainbow()}))`;
         }
         grid.appendChild(squares);
     } return;
 }
 
+//clears the board
+function clearBoard() {
+    for (let i = 0; i < 4096; i++) {
+        const squares = document.querySelector("#square");
+        squares.style.background = "linear-gradient(120deg, gray, white)";
+        grid.appendChild(squares);
+    } return;
+}
 
+//runs default grid of 16x16
+addSquares(16)
 
+//2x2 button
+const two = document.querySelector("#two");
+two.addEventListener('click', () => {
+    addSquares(2);
+});
 
+//8x8 button
+const eight = document.querySelector("#eight");
+eight.addEventListener('click', () => {
+    addSquares(8);
+});
 
-/*
-numb is an input variable from the user
-since it's a variable that's global, we should be able to play around with it
+//16x16 button
+const sixteen = document.querySelector("#sixteen");
+sixteen.addEventListener('click', () => {
+    addSquares(16);
+});
 
-user inputted 'numb' will create that number of rows/columns (not squares?)
+//36x36 button
+const thirtysix = document.querySelector("#thirtysix");
+thirtysix.addEventListener('click', () => {
+    addSquares(36);
+});
 
-the inputted 'numb' means that number of squares going across and down, to make the grid
+//64x64 button
+const sixtyfour = document.querySelector("#sixtyfour");
+sixtyfour.addEventListener('click', () => {
+    addSquares(64);
+});
 
-the grid must allow the squares to cover it, not overflow or vice versa. they must fit.
-
-squares' width & height is auto so long as they fill the space they're in
-
-so numb = columns/rows
-*/
+//new board button
+const clear = document.querySelector("#zero");
+clear.addEventListener('click', clearBoard);
