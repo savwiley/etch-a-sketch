@@ -61,27 +61,6 @@ button:hover, .social a:hover {
     padding: 10px 0;
 }
 
-.social {
-    text-align:center;
-    width: 100px;
-}
-#link{
-    display:inline-block;
-    padding: 0 5px;
-}
-.social a{
-    color: #444;
-    text-decoration:none;
-    display:block;
-    width: 15px;
-    height: 15px;
-    background: rgb(190,190,190);
-    border: 2px solid #999;
-    border-radius: 50px;
-    font-size:15px;
-    box-shadow: -3px 3px 3px rgba(0,0,0,0.2);
-}
-
 #square {
     background: linear-gradient(120deg, gray, white);
 }
